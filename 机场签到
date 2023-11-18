@@ -1,0 +1,26 @@
+name: "机场"
+desc: "机场"
+
+http:
+
+  script:
+
+    - match: https:\/\/sy.腈纶围巾\.com
+      name: "checkincookie_env_34"
+      type: request
+      timeout: 30
+      require-body: false
+      max-size: 0
+      binary-mode: false
+
+cron:
+  script:
+
+    - name: "checkincookie_env_34"
+      cron: "5 0 * * *"
+      timeout: 60
+
+script-providers:
+  "checkincookie_env_34":
+    url: https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/glados/checkincookie_env.js
+    interval: 86400
